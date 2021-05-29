@@ -1,0 +1,40 @@
+﻿<Window x:Class="WPF.Lotto.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+        xmlns:local="clr-namespace:WPF.Lotto"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="400">
+    <Grid>
+        <dxmvvm:Interaction.Behaviors>
+            <dxmvvm:MessageBoxService />
+        </dxmvvm:Interaction.Behaviors>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Label FontSize="25" Foreground="Red" Content="{Binding Red1}" />
+            <Label FontSize="25" Foreground="Red" Content="{Binding Red2}" />
+            <Label FontSize="25" Foreground="Red" Content="{Binding Red3}" />
+            <Label FontSize="25" Foreground="Red" Content="{Binding Red4}" />
+            <Label FontSize="25" Foreground="Red" Content="{Binding Red5}" />
+            <Label FontSize="25" Foreground="Blue" Content="{Binding Blue}" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <Button Content="test1" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Button Command="{Binding TestCommand}" Content="test1" />
+        </StackPanel>
+        <!--<Button  Content="Start" Margin="180,255,400,117"  Click="Button_Click" />
+        <Button  Content="Finish" Margin="475,266,125,111" Click="Button_Click_1" />-->
+
+    </Grid>
+</Window>
